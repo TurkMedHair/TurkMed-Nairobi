@@ -478,6 +478,19 @@ h2 { font-size: 42px; font-weight: 700; color: var(--navy); line-height: 1.2; ma
 .gallery-details h4 { font-size: 18px; color: var(--navy); margin-bottom: 4px; }
 .gallery-grafts { font-size: 13px; color: var(--gold-dark); font-weight: 700; }
 
+/* TikTok Card styling to match site layout */
+.tiktok-card {
+  background: var(--bg-light);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
 /* ==========================================================================
    ADVANCED GRAFT CALCULATOR GUIDE
    ========================================================================== */
@@ -841,10 +854,9 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
 <section class="tour-bg">
   <div class="container">
     <div class="grid-2">
-    <div class="image-stack">
-  <img class="image-stack-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Premium Clinic Consultation Suite">
-  <!-- Second image removed to prevent white box overflow -->
-</div>
+      <div class="image-stack">
+        <img class="image-stack-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Premium Clinic Consultation Suite">
+      </div>
       <div>
         <span class="eyebrow">The Environment</span>
         <h2>A Premium Facility Engineered for Precision.</h2>
@@ -938,23 +950,24 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
           <span class="gallery-grafts">3,400 Grafts Relocated</span>
         </div>
       </div>
-<div class="gallery-card">
-  <div class="slider-container">
-    <div class="slider-half slider-left">
-      <img src="janeresult.jpg" alt="Before Hair Transplant Crown View">
-      <span class="slider-label">Before</span>
-    </div>
-    <div class="slider-half slider-right">
-      <img src="janeresult.jpg" alt="After Hair Transplant Crown View">
-      <span class="slider-label">10 Months</span>
-    </div>
-  </div>
-  <div class="gallery-details">
-    <div class="gallery-meta"><span>Case Study #1104</span><span>DHI System</span></div>
-    <h4>Crown Vortex Dense Pack</h4>
-    <span class="gallery-grafts">4,100 Grafts Relocated</span>
-  </div>
-</div>
+
+      <div class="gallery-card">
+        <div class="slider-container">
+          <div class="slider-half slider-left">
+            <img src="janeresult.jpg" alt="Before Hair Transplant Crown View">
+            <span class="slider-label">Before</span>
+          </div>
+          <div class="slider-half slider-right">
+            <img src="janeresult.jpg" alt="After Hair Transplant Crown View">
+            <span class="slider-label">10 Months</span>
+          </div>
+        </div>
+        <div class="gallery-details">
+          <div class="gallery-meta"><span>Case Study #1104</span><span>DHI System</span></div>
+          <h4>Crown Vortex Dense Pack</h4>
+          <span class="gallery-grafts">4,100 Grafts Relocated</span>
+        </div>
+      </div>
 
       <div class="gallery-card">
         <div class="slider-container">
@@ -973,6 +986,23 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
           <span class="gallery-grafts">2,800 Grafts Relocated</span>
         </div>
       </div>
+
+      <!-- TIKTOK EMBED CARD -->
+      <div class="tiktok-card">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@turkishairnairobi/video/7610522255319223570" data-video-id="7610522255319223570" style="max-width: 605px;min-width: 325px;">
+          <section>
+            <a target="_blank" title="@turkishairnairobi" href="https://www.tiktok.com/@turkishairnairobi?refer=embed">@turkishairnairobi</a>
+            Ramadan Kareem Contact Us for more information Dm or 0726 618 187 Nairobi Parklands.
+            <a title="somalitiktok" target="_blank" href="https://www.tiktok.com/tag/somalitiktok?refer=embed">#somalitiktok</a>
+            <a title="ramadan" target="_blank" href="https://www.tiktok.com/tag/ramadan?refer=embed">#ramadan</a>
+            <a title="nairobi" target="_blank" href="https://www.tiktok.com/tag/nairobi?refer=embed">#Nairobi</a>
+            <a title="creatorsearchinsights" target="_blank" href="https://www.tiktok.com/tag/creatorsearchinsights?refer=embed">#creatorsearchinsights</a>
+            <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a>
+            <a target="_blank" title="♬ original sound - Turkish Hair Nairobi" href="https://www.tiktok.com/music/original-sound-7610522312898628370?refer=embed">♬ original sound - Turkish Hair Nairobi</a>
+          </section>
+        </blockquote>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1051,37 +1081,37 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
     <h2>The Medical Faculty</h2>
     <p class="section-desc">Your treatment is designed and carried out by qualified clinicians with specialized training in modern hair restoration techniques.</p>
     
-   <div class="team-grid">
-  <!-- Dr. Ahmed Başkaya -->
-  <div class="team-card">
-    <img class="team-img" src="dr ahmed nairobi.jpeg" alt="Dr. Ahmed Başkaya portrait">
-    <div class="team-info">
-      <h3>Dr. Ahmed Başkaya</h3>
-      <div class="team-role">Chief Trichologist Specialist</div>
-      <p class="team-credentials">Over 14 years of surgical practice in Istanbul's leading clinical centers. Registered expert in large-scale FUE harvesting models.</p>
-    </div>
-  </div>
+    <div class="team-grid">
+      <!-- Dr. Ahmed Başkaya -->
+      <div class="team-card">
+        <img class="team-img" src="dr ahmed nairobi.jpeg" alt="Dr. Ahmed Başkaya portrait">
+        <div class="team-info">
+          <h3>Dr. Ahmed Başkaya</h3>
+          <div class="team-role">Chief Trichologist Specialist</div>
+          <p class="team-credentials">Over 14 years of surgical practice in Istanbul's leading clinical centers. Registered expert in large-scale FUE harvesting models.</p>
+        </div>
+      </div>
 
- <!-- Dr. Songül -->
-  <div class="team-card">
-    <img class="team-img" src="Dr. Songül.jpeg" alt="Dr. Songül portrait">
-    <div class="team-info">
-      <h3>Dr. Songül</h3>
-      <div class="team-role">Micro-Graft Implantation Lead</div>
-      <p class="team-credentials">Specializes in dense-pack DHI hairline reconstructions, ensuring natural growth angles and excellent graft survival rates.</p>
-    </div>
-  </div>
+      <!-- Dr. Songül -->
+      <div class="team-card">
+        <img class="team-img" src="Dr. Songül.jpeg" alt="Dr. Songül portrait">
+        <div class="team-info">
+          <h3>Dr. Songül</h3>
+          <div class="team-role">Micro-Graft Implantation Lead</div>
+          <p class="team-credentials">Specializes in dense-pack DHI hairline reconstructions, ensuring natural growth angles and excellent graft survival rates.</p>
+        </div>
+      </div>
 
-<!-- Dr. Nur -->
-  <div class="team-card">
-   <img class="team-img" src="Dr. Nur.jpeg" alt="Dr. Nur portrait">
-    <div class="team-info">
-      <h3>Dr. Nur</h3>
-      <div class="team-role">Post-Operative Performance Supervisor</div>
-      <p class="team-credentials">Oversees clinical health compliance, local aftercare programs, and long-term follicle development reviews.</p>
+      <!-- Dr. Nur -->
+      <div class="team-card">
+        <img class="team-img" src="Dr. Nur.jpeg" alt="Dr. Nur portrait">
+        <div class="team-info">
+          <h3>Dr. Nur</h3>
+          <div class="team-role">Post-Operative Performance Supervisor</div>
+          <p class="team-credentials">Oversees clinical health compliance, local aftercare programs, and long-term follicle development reviews.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
   </div>
 </section>
 
@@ -1282,6 +1312,7 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
     </div>
   </div>
 </footer>
+
 <style>
 .whatsapp-float {
   position: fixed;
@@ -1308,8 +1339,13 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
   height: 35px;
 }
 </style>
-   <a href="https://wa.me/254726618187" target="_blank" class="whatsapp-float">
+
+<a href="https://wa.me/254726618187" target="_blank" class="whatsapp-float">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
+
+<!-- TIKTOK EMBED SCRIPT -->
+<script async src="https://www.tiktok.com/embed.js"></script>
+
 </body>
 </html>
