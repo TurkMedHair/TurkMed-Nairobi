@@ -519,44 +519,92 @@ h2 { font-size: 42px; font-weight: 700; color: var(--navy); line-height: 1.2; ma
    CHRONOLOGICAL PATIENT JOURNEY
    ========================================================================== */
 .process-bg { background: var(--bg-light); }
-.process-timeline { position: relative; max-width: 900px; margin: 64px auto 0; }
-.process-timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 40px;
-  width: 2px;
-  background: var(--border-light);
+.process-card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 950px;
+  margin: 48px auto 0;
 }
-.process-node { display: flex; gap: 40px; margin-bottom: 48px; position: relative; }
-.process-node:last-child { margin-bottom: 0; }
-.process-marker {
-  width: 82px;
-  height: 82px;
+.process-card {
   background: var(--bg-surface);
-  border: 2px solid var(--gold);
-  color: var(--navy);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
+.process-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+.process-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.process-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--navy);
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 800;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  font-weight: 700;
-  z-index: 5;
-  box-shadow: var(--shadow-sm);
-  flex-shrink: 0;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-.process-content {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-light);
-  padding: 36px;
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
+.process-body {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.process-content h3 { font-size: 20px; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
-.process-content p { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
-.process-tag { font-size: 10px; letter-spacing: 2px; background: var(--navy); color: var(--gold-light); padding: 4px 12px; border-radius: 3px; font-weight: 700; }
+.process-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.process-body h3 {
+  font-size: 22px;
+  color: var(--navy);
+  margin: 0;
+}
+.process-body p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0;
+}
+.process-tag { 
+  font-size: 10px; 
+  letter-spacing: 2px; 
+  background: var(--navy); 
+  color: var(--gold-light); 
+  padding: 4px 12px; 
+  border-radius: 3px; 
+  font-weight: 700; 
+  text-transform: uppercase;
+}
 
 /* ==========================================================================
    MEDICAL EXPERTISE / FACULTY
@@ -746,10 +794,12 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
   .menu-toggle:checked ~ .hamburger-label span:nth-child(2) { opacity: 0; }
   .menu-toggle:checked ~ .hamburger-label span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: var(--red); }
   
-  .process-timeline::before { left: 24px; }
-  .process-marker { width: 50px; height: 50px; font-size: 16px; }
-  .process-node { gap: 20px; }
-  .process-content { padding: 24px; }
+  .process-card {
+    grid-template-columns: 100%;
+  }
+  .process-img-wrapper {
+    height: 200px;
+  }
 }
 
 @media (max-width: 580px) {
@@ -1072,40 +1122,69 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
   <div class="container">
     <span class="eyebrow">The Experience Timeline</span>
     <h2>Your Path to Permanent Hair Growth</h2>
-    <p class="section-desc">A structured look at your journey from the initial consultation through to final growth results.</p>
+    <p class="section-desc">A structured visual look at your journey from initial consultation through to final growth results.</p>
     
-    <div class="process-timeline">
-      <div class="process-node">
-        <div class="process-marker">01</div>
-        <div class="process-content">
-          <h3>Structural Planning <span class="process-tag">Day 0</span></h3>
+    <div class="process-card-grid">
+      <!-- STAGE 01 -->
+      <div class="process-card">
+        <div class="process-img-wrapper">
+          <span class="process-badge">01</span>
+          <img class="process-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Hairline Planning Consultation">
+        </div>
+        <div class="process-body">
+          <div class="process-header-row">
+            <h3>Structural Planning</h3>
+            <span class="process-tag">Day 0</span>
+          </div>
           <p>Microscopic analysis of donor area reserves. We map out a tailored hairline framework on screen, estimating optimal graft requirements and density targets.</p>
         </div>
       </div>
 
-      <div class="process-node">
-        <div class="process-marker">02</div>
-        <div class="process-content">
-          <h3>The Operation Session <span class="process-tag">The Day</span></h3>
+      <!-- STAGE 02 -->
+      <div class="process-card">
+        <div class="process-img-wrapper">
+          <span class="process-badge">02</span>
+          <img class="process-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Clinical Operation Room">
+        </div>
+        <div class="process-body">
+          <div class="process-header-row">
+            <h3>The Operation Session</h3>
+            <span class="process-tag">The Day</span>
+          </div>
           <p>An outpatient procedure performed under local anesthesia. Grafts are carefully harvested and placed within 6 to 8 hours. Relax, watch a movie, or use our high-speed Wi-Fi throughout.</p>
         </div>
       </div>
 
-      <div class="process-node">
-        <div class="process-marker">03</div>
-        <div class="process-content">
-          <h3>First Technical Wash <span class="process-tag">+24 Hours</span></h3>
+      <!-- STAGE 03 -->
+      <div class="process-card">
+        <div class="process-img-wrapper">
+          <span class="process-badge">03</span>
+          <img class="process-img" src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="Post-Operative Hair Care Wash">
+        </div>
+        <div class="process-body">
+          <div class="process-header-row">
+            <h3>First Technical Wash</h3>
+            <span class="process-tag">+24 Hours</span>
+          </div>
           <p>Return to our clinic for post-operative cleaning. Our team demonstrates specialized washing techniques, handles early scabbing care, and provides your take-home care kit.</p>
         </div>
       </div>
 
-      <div class="process-node">
-        <div class="process-marker">04</div>
-        <div class="process-content">
-          <h3>Maturation & Growth <span class="process-tag">12 Months</span></h3>
+      <!-- STAGE 04 -->
+      <div class="process-card">
+        <div class="process-img-wrapper">
+          <span class="process-badge">04</span>
+          <img class="process-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Full Hair Restoration Result">
+        </div>
+        <div class="process-body">
+          <div class="process-header-row">
+            <h3>Maturation & Growth</h3>
+            <span class="process-tag">12 Months</span>
+          </div>
           <p>New hair growth begins to fill out around month 3 to 4, with final density and natural integration achieved within a 12 to 18-month timeline.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
