@@ -166,7 +166,7 @@ nav ul li a:hover::after {
 }
 .nav-btn-outline:hover {
   background: var(--navy);
-  color: var(--white);
+  color: white;
   box-shadow: var(--shadow-md);
 }
 .nav-btn-solid {
@@ -443,7 +443,7 @@ h2 { font-size: 42px; font-weight: 700; color: var(--navy); line-height: 1.2; ma
 .treat-link { color: white; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; font-weight: 700; }
 
 /* ==========================================================================
-   INTERACTIVE TRANSFORMATION GALLERY
+   INTERACTIVE TRANSFORMATION GALLERY & SOCIAL EMBEDS
    ========================================================================== */
 .gallery-bg { background: var(--bg-surface); }
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
@@ -478,8 +478,8 @@ h2 { font-size: 42px; font-weight: 700; color: var(--navy); line-height: 1.2; ma
 .gallery-details h4 { font-size: 18px; color: var(--navy); margin-bottom: 4px; }
 .gallery-grafts { font-size: 13px; color: var(--gold-dark); font-weight: 700; }
 
-/* TikTok Card styling to match site layout */
-.tiktok-card {
+/* Social Media Card Styling for uniform grid */
+.social-embed-card {
   background: var(--bg-light);
   border-radius: 8px;
   border: 1px solid var(--border-light);
@@ -488,6 +488,7 @@ h2 { font-size: 42px; font-weight: 700; color: var(--navy); line-height: 1.2; ma
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 420px;
   overflow: hidden;
 }
 
@@ -696,7 +697,7 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
 .footer-copy { font-size: 12px; color: #475569; }
 
 /* ==========================================================================
-   RESPONSIVE MEDIA INSTRUCTIONS (TABLET & SMARTPHONES)
+   RESPONSIVE MEDIA INSTRUCTIONS
    ========================================================================== */
 @media (max-width: 1024px) {
   nav { padding: 0 20px; }
@@ -719,7 +720,6 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
   .image-stack-img-sub { display: none; }
   .hamburger-label { display: flex; }
   
-  /* Mobile Menu Drawer Logic Setup */
   .nav-menu-container {
     position: fixed;
     top: 0;
@@ -764,6 +764,10 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
 </style>
 </head>
 <body>
+
+<!-- FACEBOOK SDK REQUIREMENT -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
 
 <div class="top-bar">✦ Istanbul Quality Standards Available Directly In Nairobi • Flight Free ✦</div>
 
@@ -875,7 +879,6 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
     <p class="section-desc">Every surgical plan balances harvesting layout with facial frameworks to align with natural hair vectors.</p>
     
     <div class="treat-grid">
-      <!-- FUE Sapphire -->
       <div class="treat-item">
         <div class="treat-header">
           <h3>FUE Sapphire Transplant</h3>
@@ -887,7 +890,6 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
         </div>
       </div>
 
-      <!-- DHI -->
       <div class="treat-item">
         <div class="treat-header">
           <h3>DHI (Direct Hair Implantation)</h3>
@@ -899,7 +901,6 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
         </div>
       </div>
 
-      <!-- Beard -->
       <div class="treat-item">
         <div class="treat-header">
           <h3>Advanced Beard & Mustache Structure</h3>
@@ -911,7 +912,6 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
         </div>
       </div>
 
-      <!-- PRP -->
       <div class="treat-item">
         <div class="treat-header">
           <h3>Platelet Growth Factor Infusions</h3>
@@ -930,9 +930,10 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
   <div class="container">
     <span class="eyebrow">Verified Transformations</span>
     <h2>Real Clinical Transformations</h2>
-    <p class="section-desc">Examine verified results from patients who underwent hair restoration procedures at our clinic.</p>
+    <p class="section-desc">Examine verified results and active clinical updates across our media platforms.</p>
     
     <div class="gallery-grid">
+      <!-- BEFORE / AFTER CASES -->
       <div class="gallery-card">
         <div class="slider-container">
           <div class="slider-half slider-left">
@@ -987,8 +988,8 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
         </div>
       </div>
 
-      <!-- TIKTOK EMBED CARD -->
-      <div class="tiktok-card">
+      <!-- 1. TIKTOK EMBED CARD -->
+      <div class="social-embed-card">
         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@turkishairnairobi/video/7610522255319223570" data-video-id="7610522255319223570" style="max-width: 605px;min-width: 325px;">
           <section>
             <a target="_blank" title="@turkishairnairobi" href="https://www.tiktok.com/@turkishairnairobi?refer=embed">@turkishairnairobi</a>
@@ -1001,6 +1002,40 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
             <a target="_blank" title="♬ original sound - Turkish Hair Nairobi" href="https://www.tiktok.com/music/original-sound-7610522312898628370?refer=embed">♬ original sound - Turkish Hair Nairobi</a>
           </section>
         </blockquote>
+      </div>
+
+      <!-- 2. INSTAGRAM EMBED CARD -->
+      <div class="social-embed-card">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CzX12345678/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%;">
+          <div style="padding:16px;">
+            <a href="https://www.instagram.com/turkishhairnairobi/" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; width: 40px; margin-right: 14px;"></div>
+                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                  <div style="background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 100px;"></div>
+                  <div style="background-color: #F4F4F4; border-radius: 4px; height: 10px; margin-top: 6px; width: 60px;"></div>
+                </div>
+              </div>
+              <div style="padding: 19% 0;"></div>
+              <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"></div>
+              <div style="padding-top: 8px;">
+                <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View Instagram Transformation Post</div>
+              </div>
+            </a>
+          </div>
+        </blockquote>
+      </div>
+
+      <!-- 3. FACEBOOK EMBED CARD -->
+      <div class="social-embed-card">
+        <div class="fb-post" 
+             data-href="https://www.facebook.com/facebook/posts/pfbid021x" 
+             data-width="350" 
+             data-show-text="true">
+          <blockquote cite="https://www.facebook.com/facebook/posts/pfbid021x" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/turkishhairnairobi">Turkish Hair Nairobi Official Updates</a>
+          </blockquote>
+        </div>
       </div>
 
     </div>
@@ -1082,7 +1117,6 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
     <p class="section-desc">Your treatment is designed and carried out by qualified clinicians with specialized training in modern hair restoration techniques.</p>
     
     <div class="team-grid">
-      <!-- Dr. Ahmed Başkaya -->
       <div class="team-card">
         <img class="team-img" src="dr ahmed nairobi.jpeg" alt="Dr. Ahmed Başkaya portrait">
         <div class="team-info">
@@ -1092,7 +1126,6 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
         </div>
       </div>
 
-      <!-- Dr. Songül -->
       <div class="team-card">
         <img class="team-img" src="Dr. Songül.jpeg" alt="Dr. Songül portrait">
         <div class="team-info">
@@ -1102,7 +1135,6 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
         </div>
       </div>
 
-      <!-- Dr. Nur -->
       <div class="team-card">
         <img class="team-img" src="Dr. Nur.jpeg" alt="Dr. Nur portrait">
         <div class="team-info">
@@ -1344,8 +1376,9 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
 
-<!-- TIKTOK EMBED SCRIPT -->
+<!-- SOCIAL MEDIA EMBED SCRIPTS (TIKTOK & INSTAGRAM) -->
 <script async src="https://www.tiktok.com/embed.js"></script>
+<script async src="https://www.instagram.com/embed.js"></script>
 
 </body>
 </html>
