@@ -750,7 +750,16 @@ h2 { font-size: 40px; font-weight: 800; color: var(--navy); line-height: 1.25; m
    ========================================================================== */
 footer { background: var(--navy-dark); padding: 90px 0 40px; color: var(--text-dim); border-top: 4px solid var(--gold); font-size: 14px; }
 .footer-grid { display: grid; grid-template-columns: 35% 20% 20% 25%; gap: 30px; margin-bottom: 60px; }
-.footer-brand img { height: 75px; width: auto; margin-bottom: 20px; display: block; }
+.footer-brand img { 
+  height: 75px; 
+  width: auto; 
+  margin-bottom: 20px; 
+  display: block; 
+  max-height: 80px; 
+  object-fit: contain;
+  filter: invert(1) brightness(1.2);
+  mix-blend-mode: screen;
+}
 .footer-brand p { line-height: 1.8; color: var(--text-dim); }
 .footer-heading { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: white; margin-bottom: 24px; font-weight: 800; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
@@ -1427,8 +1436,8 @@ footer { background: var(--navy-dark); padding: 90px 0 40px; color: var(--text-d
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <!-- FIXED: Image path corrected from loggo.jpeg to logo.jpeg with explicit inline controls -->
-        <img src="logo.jpeg" alt="Turkish Hair Nairobi Logo Light" style="max-height: 80px; width: auto; object-fit: contain;">
+        <!-- FIXED: Removed inline styles and routed through updated CSS block -->
+        <img src="logo.jpeg" alt="Turkish Hair Nairobi Logo Light">
         <p>Providing premium Turkish hair restoration techniques and clinical standards locally in Nairobi, Kenya.</p>
       </div>
       
