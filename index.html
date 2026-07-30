@@ -78,10 +78,10 @@ body {
 }
 
 /* ==========================================================================
-   HEADER & LOGO NAVIGATION
+   HEADER & LOGO NAVIGATION (ENHANCED LOGO SIZE)
    ========================================================================== */
 nav {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
   padding: 0 32px;
@@ -91,7 +91,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 90px;
+  height: 105px; /* Increased header height for larger logo visibility */
   box-shadow: var(--shadow-sm);
 }
 
@@ -99,11 +99,18 @@ nav {
   display: flex;
   align-items: center;
   text-decoration: none;
+  height: 100%;
+  padding: 10px 0;
 }
 .logo-brand img {
-  height: 62px;
+  height: 85px; /* Scaled up logo sizing */
   width: auto;
+  max-height: 100%;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.logo-brand:hover img {
+  transform: scale(1.04);
 }
 
 .nav-menu-container {
@@ -424,7 +431,7 @@ h2 { font-size: 40px; font-weight: 800; color: var(--navy); line-height: 1.25; m
 .treat-link:hover { color: white; }
 
 /* ==========================================================================
-   TRANSFORMATION GALLERY & SOCIAL EMBEDS
+   TRANSFORMATION GALLERY & FAST EMBED UI CARDS
    ========================================================================== */
 .gallery-bg { background: var(--bg-surface); }
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -460,19 +467,86 @@ h2 { font-size: 40px; font-weight: 800; color: var(--navy); line-height: 1.25; m
 .gallery-details h4 { font-size: 18px; color: var(--navy); margin-bottom: 4px; font-weight: 700; }
 .gallery-grafts { font-size: 13px; color: var(--gold); font-weight: 800; }
 
-/* Uniform Social Media Cards */
+/* High-Performance Custom Social Embed Cards */
 .social-embed-card {
   background: var(--bg-light);
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-sm);
-  padding: 16px;
+  padding: 24px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 420px;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 380px;
+  transition: all 0.3s ease;
+  position: relative;
   overflow: hidden;
 }
+.social-embed-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
+.social-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.social-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  object-fit: cover;
+}
+.social-title h5 {
+  font-size: 15px;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0;
+}
+.social-title span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.social-icon-badge {
+  margin-left: auto;
+  font-size: 20px;
+}
+.social-body {
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 16px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.social-tags {
+  font-size: 12px;
+  color: var(--sky);
+  font-weight: 600;
+}
+.btn-social-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.btn-tiktok { background: #000000; color: #FFFFFF; }
+.btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #FFFFFF; }
+.btn-facebook { background: #1877F2; color: #FFFFFF; }
+.btn-social-action:hover { opacity: 0.9; }
 
 /* ==========================================================================
    GRAFT CALCULATOR MATRIX
@@ -676,7 +750,7 @@ h2 { font-size: 40px; font-weight: 800; color: var(--navy); line-height: 1.25; m
    ========================================================================== */
 footer { background: var(--navy-dark); padding: 90px 0 40px; color: var(--text-dim); border-top: 4px solid var(--gold); font-size: 14px; }
 .footer-grid { display: grid; grid-template-columns: 35% 20% 20% 25%; gap: 30px; margin-bottom: 60px; }
-.footer-brand img { height: 60px; width: auto; margin-bottom: 20px; display: block; }
+.footer-brand img { height: 75px; width: auto; margin-bottom: 20px; display: block; }
 .footer-brand p { line-height: 1.8; color: var(--text-dim); }
 .footer-heading { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: white; margin-bottom: 24px; font-weight: 800; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
@@ -706,7 +780,8 @@ footer { background: var(--navy-dark); padding: 90px 0 40px; color: var(--text-d
    RESPONSIVE LAYOUTS
    ========================================================================== */
 @media (max-width: 1024px) {
-  nav { padding: 0 20px; }
+  nav { padding: 0 20px; height: 90px; }
+  .logo-brand img { height: 65px; }
   .nav-menu-container { gap: 20px; }
   nav ul { gap: 20px; }
   .why-grid, .gallery-grid, .team-grid, .test-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
@@ -764,10 +839,6 @@ footer { background: var(--navy-dark); padding: 90px 0 40px; color: var(--text-d
 </style>
 </head>
 <body>
-
-<!-- FACEBOOK SDK REQUIREMENT -->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
 
 <div class="top-bar">
   <span class="pulse"></span>
@@ -941,7 +1012,7 @@ footer { background: var(--navy-dark); padding: 90px 0 40px; color: var(--text-d
     <p class="section-desc">Examine verified results and active clinical updates across our media platforms.</p>
     
     <div class="gallery-grid">
-      <!-- BEFORE / AFTER CASES -->
+      <!-- BEFORE / AFTER CASE 1 -->
       <div class="gallery-card">
         <div class="slider-container">
           <div class="slider-half slider-left">
@@ -960,6 +1031,7 @@ footer { background: var(--navy-dark); padding: 90px 0 40px; color: var(--text-d
         </div>
       </div>
 
+      <!-- BEFORE / AFTER CASE 2 -->
       <div class="gallery-card">
         <div class="slider-container">
           <div class="slider-half slider-left">
@@ -978,6 +1050,7 @@ footer { background: var(--navy-dark); padding: 90px 0 40px; color: var(--text-d
         </div>
       </div>
 
+      <!-- BEFORE / AFTER CASE 3 -->
       <div class="gallery-card">
         <div class="slider-container">
           <div class="slider-half slider-left">
@@ -996,54 +1069,73 @@ footer { background: var(--navy-dark); padding: 90px 0 40px; color: var(--text-d
         </div>
       </div>
 
-      <!-- 1. TIKTOK EMBED CARD -->
+      <!-- 1. HIGH-SPEED TIKTOK UI CARD -->
       <div class="social-embed-card">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@turkishairnairobi/video/7610522255319223570" data-video-id="7610522255319223570" style="max-width: 605px;min-width: 325px;">
-          <section>
-            <a target="_blank" title="@turkishairnairobi" href="https://www.tiktok.com/@turkishairnairobi?refer=embed">@turkishairnairobi</a>
-            Ramadan Kareem Contact Us for more information Dm or 0726 618 187 Nairobi Parklands.
-            <a title="somalitiktok" target="_blank" href="https://www.tiktok.com/tag/somalitiktok?refer=embed">#somalitiktok</a>
-            <a title="ramadan" target="_blank" href="https://www.tiktok.com/tag/ramadan?refer=embed">#ramadan</a>
-            <a title="nairobi" target="_blank" href="https://www.tiktok.com/tag/nairobi?refer=embed">#Nairobi</a>
-            <a title="creatorsearchinsights" target="_blank" href="https://www.tiktok.com/tag/creatorsearchinsights?refer=embed">#creatorsearchinsights</a>
-            <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a>
-            <a target="_blank" title="♬ original sound - Turkish Hair Nairobi" href="https://www.tiktok.com/music/original-sound-7610522312898628370?refer=embed">♬ original sound - Turkish Hair Nairobi</a>
-          </section>
-        </blockquote>
-      </div>
-
-      <!-- 2. INSTAGRAM EMBED CARD -->
-      <div class="social-embed-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CzX12345678/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%;">
-          <div style="padding:16px;">
-            <a href="https://www.instagram.com/turkishhairnairobi/" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-              <div style="display: flex; flex-direction: row; align-items: center;">
-                <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; width: 40px; margin-right: 14px;"></div>
-                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                  <div style="background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 100px;"></div>
-                  <div style="background-color: #F4F4F4; border-radius: 4px; height: 10px; margin-top: 6px; width: 60px;"></div>
-                </div>
-              </div>
-              <div style="padding: 19% 0;"></div>
-              <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"></div>
-              <div style="padding-top: 8px;">
-                <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View Instagram Transformation Post</div>
-              </div>
-            </a>
+        <div>
+          <div class="social-header">
+            <img class="social-avatar" src="logo.jpeg" alt="Turkish Hair Nairobi Avatar">
+            <div class="social-title">
+              <h5>@turkishairnairobi</h5>
+              <span>TikTok Official</span>
+            </div>
+            <span class="social-icon-badge">🎵</span>
           </div>
-        </blockquote>
+          <div class="social-body">
+            Ramadan Kareem! Contact Us for more information & bookings directly at our Nairobi Parklands clinic.
+          </div>
+          <div class="social-tags">
+            #somalitiktok #ramadan #nairobi #hairtransplant
+          </div>
+        </div>
+        <a href="https://www.tiktok.com/@turkishairnairobi" target="_blank" class="btn-social-action btn-tiktok">
+          Watch On TikTok
+        </a>
       </div>
 
-      <!-- 3. FACEBOOK EMBED CARD -->
+      <!-- 2. HIGH-SPEED INSTAGRAM UI CARD -->
       <div class="social-embed-card">
-        <div class="fb-post" 
-             data-href="https://www.facebook.com/facebook/posts/pfbid021x" 
-             data-width="350" 
-             data-show-text="true">
-          <blockquote cite="https://www.facebook.com/facebook/posts/pfbid021x" class="fb-xfbml-parse-ignore">
-            <a href="https://www.facebook.com/turkishhairnairobi">Turkish Hair Nairobi Official Updates</a>
-          </blockquote>
+        <div>
+          <div class="social-header">
+            <img class="social-avatar" src="logo.jpeg" alt="Turkish Hair Nairobi Avatar">
+            <div class="social-title">
+              <h5>@turkishhairnairobi</h5>
+              <span>Instagram Community</span>
+            </div>
+            <span class="social-icon-badge">📸</span>
+          </div>
+          <div class="social-body">
+            Explore daily patient growth journey updates, live operation insights, and micro-grafting hairline transformations!
+          </div>
+          <div class="social-tags">
+            #TurkishHairNairobi #HairRestorationKenya #Density
+          </div>
         </div>
+        <a href="https://www.instagram.com/turkishhairnairobi/" target="_blank" class="btn-social-action btn-instagram">
+          Follow On Instagram
+        </a>
+      </div>
+
+      <!-- 3. HIGH-SPEED FACEBOOK UI CARD -->
+      <div class="social-embed-card">
+        <div>
+          <div class="social-header">
+            <img class="social-avatar" src="logo.jpeg" alt="Turkish Hair Nairobi Avatar">
+            <div class="social-title">
+              <h5>Turkish Hair Nairobi</h5>
+              <span>Facebook Official Page</span>
+            </div>
+            <span class="social-icon-badge">👍</span>
+          </div>
+          <div class="social-body">
+            Join our official Facebook page to review verified patient ratings, clinical announcements, and consultation schedules.
+          </div>
+          <div class="social-tags">
+            #ClinicUpdates #ParklandsNairobi #HairTransplantKenya
+          </div>
+        </div>
+        <a href="https://www.facebook.com/turkishhairnairobi" target="_blank" class="btn-social-action btn-facebook">
+          Visit Facebook Page
+        </a>
       </div>
 
     </div>
@@ -1382,8 +1474,6 @@ footer { background: var(--navy-dark); padding: 90px 0 40px; color: var(--text-d
 </a>
 
 <!-- INTERACTIVE SCRIPTS -->
-<script async src="https://www.tiktok.com/embed.js"></script>
-<script async src="https://www.instagram.com/embed.js"></script>
 <script>
   // Dynamic Accordion System for FAQs
   document.querySelectorAll('.faq-trigger').forEach(trigger => {
